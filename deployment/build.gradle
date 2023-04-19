@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+}
+
+dependencies {
+    implementation project(":${quarkusExtensionName}")
+
+    implementation platform("io.quarkus:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+    implementation 'io.quarkus:quarkus-core-deployment'
+    implementation 'io.quarkus:quarkus-vertx-deployment'
+    implementation 'io.quarkus:quarkus-smallrye-reactive-messaging-deployment'
+    implementation 'io.quarkus:quarkus-arc-deployment'
+
+    testImplementation 'io.quarkus:quarkus-junit5-internal'
+    testImplementation 'io.quarkus:quarkus-jackson'
+    testImplementation group: 'io.smallrye.reactive', name: 'smallrye-reactive-messaging-in-memory', version: '3.22.1'
+    testImplementation group: 'org.awaitility', name: 'awaitility', version: '4.2.0'
+    testImplementation group: 'io.vertx', name: 'vertx-junit5', version: '4.3.7'
+}

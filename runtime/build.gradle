@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+    id 'io.quarkus.extension'
+}
+
+quarkusExtension {
+    deploymentModule = "${quarkusExtensionName}-deployment"
+}
+
+dependencies {
+    implementation platform("io.quarkus:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+    implementation 'io.quarkus:quarkus-core'
+    implementation 'io.quarkus:quarkus-arc'
+
+    testImplementation 'io.quarkus:quarkus-junit5'
+    testImplementation group: 'io.vertx', name: 'vertx-junit5', version: '4.3.7'
+}
