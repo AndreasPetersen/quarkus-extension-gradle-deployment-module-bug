@@ -11,7 +11,7 @@ pluginManagement {
 }
 
 rootProject.name = 'quarkus-extension-gradle-deployment-module-bug-parent'
-include "${quarkusExtensionName}", "${quarkusExtensionName}-deployment"
+include "${quarkusExtensionName}", "${quarkusExtensionDeploymentPrefix}${quarkusExtensionName}-deployment"
 
 project(":${quarkusExtensionName}").projectDir = file("runtime")
-project(":${quarkusExtensionName}-deployment").projectDir = file("deployment")
+project(":${quarkusExtensionDeploymentPrefix}${quarkusExtensionName}-deployment").projectDir = file("deployment")
