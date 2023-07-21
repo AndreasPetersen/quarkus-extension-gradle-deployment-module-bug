@@ -4,7 +4,7 @@ plugins {
 }
 
 quarkusExtension {
-    deploymentModule = "${quarkusExtensionDeploymentPrefix}${quarkusExtensionName}-deployment"
+    deploymentModule = "${quarkusExtensionDeploymentPrefix}${quarkusExtensionName}"
 }
 
 dependencies {
